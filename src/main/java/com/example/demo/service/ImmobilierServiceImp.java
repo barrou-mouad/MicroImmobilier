@@ -25,7 +25,7 @@ public class ImmobilierServiceImp implements ImmobilierService{
 
 	@Override
 	public void delete(String id) {
-		// TODO Auto-generated method stub
+		imo.deleteById(id);
 		
 	}
 
@@ -39,6 +39,12 @@ public class ImmobilierServiceImp implements ImmobilierService{
 	public List<Immobilier> getAll() {
 		// TODO Auto-generated method stub
 		return imo.findAll();
+	}
+
+	@Override
+	public Immobilier getBycode(String code) {
+		// TODO Auto-generated method stub
+		return imo.getImmobilierByCodeImmobilier(code);
 	}
 
 }

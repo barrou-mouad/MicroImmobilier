@@ -7,6 +7,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Document(collection = "client")
 public class Client {
 @Id
@@ -18,9 +20,7 @@ private String codeClient;
 private String password;
 @DBRef
 private  List<Account> accounts=new ArrayList<Account>();
-
-public Client(String id, String nom, String prenom, String email, String codeClient, String password,
-		List<Account> accounts) {
+public Client(String id, String nom, String prenom, String email, String codeClient, String password) {
 	super();
 	this.id = id;
 	this.nom = nom;
@@ -28,7 +28,7 @@ public Client(String id, String nom, String prenom, String email, String codeCli
 	this.email = email;
 	this.codeClient = codeClient;
 	this.password = password;
-	this.accounts = accounts;
+
 }
 public String getId() {
 	return id;
@@ -72,7 +72,8 @@ public String getCodeClient() {
 public void setCodeClient(String codeClient) {
 	this.codeClient = codeClient;
 }
-
-
-
 }
+
+
+
+

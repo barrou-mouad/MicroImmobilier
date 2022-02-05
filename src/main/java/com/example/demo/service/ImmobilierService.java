@@ -10,4 +10,5 @@ public Immobilier update(Immobilier im);
 public void delete(String id);
 public Immobilier getById(String id);
 public List<Immobilier>getAll();
+public Immobilier getBycode(String code);
 }

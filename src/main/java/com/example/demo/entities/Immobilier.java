@@ -8,21 +8,68 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Immobilier {
 @Id
 private String id;
+private String codeImmobilier;
 private String address;
 private String type;
 private String description;
 private double surface ;
-@DBRef
+@DBRef(lazy = true)
 private Client client;
-public Immobilier(String id, String address, String type, String description, double surface, Client client) {
+public Immobilier(String id,String codeImmobilier, String address, String type, String description, double surface,Client client) {
 	super();
 	this.id = id;
+	this.codeImmobilier=codeImmobilier;
 	this.address = address;
 	this.type = type;
 	this.description = description;
 	this.surface = surface;
+	this.client=client;
+}
+
+
+
+
+
+
+
+public Client getClient() {
+	return client;
+}
+
+
+
+
+
+
+
+public void setClient(Client client) {
 	this.client = client;
 }
+
+
+
+
+
+
+
+public String getCodeImmobilier() {
+	return codeImmobilier;
+}
+
+
+
+
+
+
+
+public void setCodeImmobilier(String codeImmobilier) {
+	this.codeImmobilier = codeImmobilier;
+}
+
+
+
+
+
 
 
 public String getId() {
@@ -57,14 +104,9 @@ public void setSurface(double surface) {
 }
 
 
-public Client getClient() {
-	return client;
-}
 
 
-public void setClient(Client client) {
-	this.client = client;
-}
+
 
 
 }
