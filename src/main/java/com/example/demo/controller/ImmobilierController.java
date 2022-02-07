@@ -23,10 +23,6 @@ ImmobilierService i;
 	public List<Immobilier> getAll(){
 		return i.getAll();
 	}
-	@GetMapping("hello")
-	public String sayHello() {
-		return "Hello Mouad";
-	}
 	@GetMapping("/{id}")
 	public Immobilier getById(@PathVariable String id) {
 		return i.getById(id);

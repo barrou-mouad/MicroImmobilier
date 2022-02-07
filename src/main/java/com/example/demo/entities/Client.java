@@ -18,8 +18,7 @@ private String prenom;
 private String email;
 private String codeClient;
 private String password;
-@DBRef
-private  List<Account> accounts=new ArrayList<Account>();
+
 public Client(String id, String nom, String prenom, String email, String codeClient, String password) {
 	super();
 	this.id = id;
@@ -60,12 +59,7 @@ public String getPassword() {
 public void setPassword(String password) {
 	this.password = password;
 }
-public List<Account> getAccounts() {
-	return accounts;
-}
-public void setAccounts(List<Account> accounts) {
-	this.accounts = accounts;
-}
+
 public String getCodeClient() {
 	return codeClient;
 }
